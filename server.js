@@ -24,14 +24,14 @@ const path = require("path");
 const { middlewareGlobal, middlewareSegundo, checkCsrfError, csrfMiddleware } = require("./src/middlewares/middleware");
 
 // Seguranca
-const helmet = require("helmet");
-const csrf = require("csurf");
-app.use(helmet());
-app.use(helmet.referrerPolicy({ policy: ["origin", "unsafe-url"] }));
-app.use(helmet.contentSecurityPolicy({ directives: {
-    "script-src": ["'self'", "cdn.jsdelivr.net"],
-    "style-src": ["'self'", "cdn.jsdelivr.net"],
-},}));
+// const helmet = require("helmet");
+// const csrf = require("csurf");
+// app.use(helmet());
+// app.use(helmet.referrerPolicy({ policy: ["origin", "unsafe-url"] }));
+// app.use(helmet.contentSecurityPolicy({ directives: {
+//     "script-src": ["'self'", "cdn.jsdelivr.net"],
+//     "style-src": ["'self'", "cdn.jsdelivr.net"],
+// },}));
 
 // Habilitar 'req.body' contendo form post
 app.use(express.urlencoded({ extended: true }));
